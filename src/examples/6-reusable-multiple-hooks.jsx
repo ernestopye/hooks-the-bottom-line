@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ExternalEventDispatcher, DisplayPokemon, PokemonPicker } from './util';
 import { fetchPokemon } from './data/fakeapi';
+import { Button } from 'reactstrap';
 
 export function Example6() {
     // state is still lifted
     const [name, setName] = useState('Bulbasaur');
+
     const { loading, data } = usePokemonLoader({ name });
 
     usePokemonEventHandler({
@@ -12,6 +14,16 @@ export function Example6() {
             setName(newPokemon);
         }
     });
+
+    // bonus
+    function someCallback() {
+        if (loading) {
+            alert('Hey relax, working on it.');
+            return;
+        }
+
+        alert('Current Pokemon: ' + name);
+    }
 
     return (
         <>
@@ -25,11 +37,13 @@ export function Example6() {
             <DisplayPokemon loading={loading} data={data} />
             <hr />
             <ExternalEventDispatcher />
+            <p />
+            <Button onClick={() => someCallback()}>Show Current</Button>
         </>
     );
 }
 
-// does one thing
+// does one thing only
 function usePokemonLoader({ name }) {
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState(null);
@@ -51,7 +65,7 @@ function usePokemonLoader({ name }) {
     return { loading, data };
 }
 
-// does one thing
+// does one thing only
 function usePokemonEventHandler({ onPokemonLoaded }) {
     useEffect(() => {
         function onLoadPokemon(data) {
