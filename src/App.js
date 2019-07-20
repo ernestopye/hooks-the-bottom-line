@@ -7,9 +7,10 @@ import { Example4 } from './examples/4-cleanup';
 import { Example5 } from './examples/5-reusable-multiple';
 import { Example6 } from './examples/6-reusable-multiple-hooks';
 import { Example7 } from './examples/7-context';
+import { Example8 } from './examples/8-refs';
 
 function App() {
-    return <Example7 />;
+    return <Example8 />;
 }
 
 export default App;
