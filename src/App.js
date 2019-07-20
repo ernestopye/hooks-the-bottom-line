@@ -10,7 +10,7 @@ import { Example7 } from './examples/7-context';
 import { Example8 } from './examples/8-refs';
 
 function App() {
-    return <Example8 />;
+    return <Example1 />;
 }
 
 export default App;
