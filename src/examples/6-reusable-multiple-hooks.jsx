@@ -44,8 +44,8 @@ export function Example6() {
 }
 
 // does one thing only
-function usePokemonLoader({ name }) {
-    const [loading, setLoading] = useState(false);
+export function usePokemonLoader({ name }) {
+    const [loading, setLoading] = useState(true);
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -66,7 +66,7 @@ function usePokemonLoader({ name }) {
 }
 
 // does one thing only
-function usePokemonEventHandler({ onPokemonLoaded }) {
+export function usePokemonEventHandler({ onPokemonLoaded }) {
     useEffect(() => {
         function onLoadPokemon(data) {
             console.debug('listened in hooks:', data.detail.name);
