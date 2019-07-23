@@ -33,6 +33,7 @@ export class FormFieldsClass extends React.Component {
                         });
                     }}
                 />
+                <p />
                 <Button
                     onClick={() => {
                         this.setState(prevState => ({
@@ -64,6 +65,7 @@ export function FormFieldsHooks() {
                     console.debug('always behind:', text);
                 }}
             />
+            <p />
             <Button
                 onClick={() => {
                     setClicks(clicks + 1);
@@ -96,6 +98,7 @@ export function FormFieldsHooksMergedState() {
                     console.debug('always behind:', state.text);
                 }}
             />
+            <p />
             <Button
                 onClick={() => {
                     // GOTCHA: no more merged state updates!

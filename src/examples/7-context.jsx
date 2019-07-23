@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { DisplayPokemon } from './util';
+import { DisplayPokemon, Spinner } from './util';
 import { usePokemonLoader } from './6-reusable-multiple-hooks';
 import { PokemonDataFetcher } from './3-reusable';
 
@@ -11,10 +11,12 @@ export function Example7() {
     return (
         <FirstPokemonContext.Provider value={'Bulbasaur'}>
             <SecondPokemonContext.Provider value={'Charmander'}>
-                <p>Class:</p>
+                <strong>Class:</strong>
+                <br />
                 <ContextConsumerClass />
                 <hr />
-                <p>Hooks:</p>
+                <strong>Hooks:</strong>
+                <br />
                 <ContextConsumerHooks />
             </SecondPokemonContext.Provider>
         </FirstPokemonContext.Provider>
@@ -69,7 +71,7 @@ function ContextConsumerHooks() {
 
     // easy!
     if (loadingFirst || loadingSecond) {
-        return <p>Loading...</p>;
+        return <Spinner />;
     }
 
     // and check out that clean component tree in dev tools!
