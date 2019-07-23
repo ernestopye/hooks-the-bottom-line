@@ -20,25 +20,13 @@ export function Example8() {
                 onClick={() => {
                     setActive(!active);
                 }}
-                style={{
-                    zIndex: 2,
-                    position: 'absolute',
-                    top: '20px',
-                    left: '20px'
-                }}
+                className="dance"
             >
                 {active ? 'Stop! 🤚' : 'Dance! 🎉'}
             </Button>
             <p />
 
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    marginTop: '200px'
-                }}
-            >
+            <div className="dance-floor">
                 <DancingPokemon name="bulbasaur" position={position1} />
                 <DancingPokemon name="pikachu" position={position2} />
                 <DancingPokemon name="charmander" position={position3} />

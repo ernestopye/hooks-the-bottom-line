@@ -15,3 +15,17 @@ body {
         transform: rotate(359deg);
     }
 }
+
+button.dance {
+    z-index: 2;
+    position: 'absolute';
+    top: 20px;
+    left: 20px;
+}
+
+div.dance-floor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 200px;
+}
