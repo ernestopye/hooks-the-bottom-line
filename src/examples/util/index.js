@@ -3,7 +3,7 @@ import { Button } from 'reactstrap';
 
 export function DisplayPokemon({ loading, data }) {
     if (loading || data === null) {
-        return 'Loading...';
+        return <Spinner />;
     }
 
     const { name, image } = data;
@@ -21,6 +21,7 @@ const pokemon = ['Bulbasaur', 'Pikachu', 'Charmander', 'Squirtle'];
 export function PokemonPicker({ value, onChange }) {
     return (
         <select
+            className="form-control"
             onChange={e => {
                 onChange(e.currentTarget.value);
             }}
@@ -52,7 +53,21 @@ export function ExternalEventDispatcher() {
                 );
             }}
         >
-            ⚡ External Event ⚡
+            <Zap /> External Event <Zap />
         </Button>
+    );
+}
+
+function Zap() {
+    return (
+        <span role="img" aria-label="zap">
+            ⚡
+        </span>
+    );
+}
+
+export function Spinner() {
+    return (
+        <img src="/pokemon/pokeball.png" alt="Loading..." className="spinner" />
     );
 }

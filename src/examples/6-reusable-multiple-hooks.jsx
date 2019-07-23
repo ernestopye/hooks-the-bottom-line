@@ -67,17 +67,15 @@ export function usePokemonLoader({ name }) {
 
 // does one thing only
 export function usePokemonEventHandler({ onPokemonLoaded }) {
-    useEffect(() => {
-        function onLoadPokemon(data) {
-            console.debug('listened in hooks:', data.detail.name);
-            onPokemonLoaded(data.detail.name);
-        }
-
-        document.addEventListener('load-pokemon', onLoadPokemon);
-
-        return () => {
-            console.debug('hooks: cleanup');
-            document.removeEventListener('load-pokemon', onLoadPokemon);
-        };
-    }, []);
+    // useEffect(() => {
+    //     function onLoadPokemon(data) {
+    //         console.debug('listened in hooks:', data.detail.name);
+    //         onPokemonLoaded(data.detail.name);
+    //     }
+    //     document.addEventListener('load-pokemon', onLoadPokemon);
+    //     return () => {
+    //         console.debug('hooks: cleanup');
+    //         document.removeEventListener('load-pokemon', onLoadPokemon);
+    //     };
+    // }, []);
 }
