@@ -36,7 +36,7 @@ export class PokemonDataFetcher extends React.Component {
 
         const pokemon = await fetchPokemon(this.props.name);
 
-        console.debug('loaded:', pokemon);
+        console.debug('data fetcher loaded:', pokemon);
 
         this.setState({
             data: pokemon,

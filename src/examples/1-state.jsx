@@ -22,7 +22,8 @@ export class FormFieldsClass extends React.Component {
     render() {
         return (
             <>
-                <label>Class:</label>
+                <strong>Class:</strong>
+                <br />
                 <input
                     className="form-control"
                     type="text"
@@ -42,7 +43,8 @@ export class FormFieldsClass extends React.Component {
                     }}
                 >
                     Click! {this.state.clicks}
-                </Button>
+                </Button>{' '}
+                {this.state.text}
             </>
         );
     }
@@ -54,7 +56,8 @@ export function FormFieldsHooks() {
 
     return (
         <>
-            <label>Hooks:</label>
+            <strong>Hooks:</strong>
+            <br />
             <input
                 className="form-control"
                 type="text"
@@ -72,7 +75,8 @@ export function FormFieldsHooks() {
                 }}
             >
                 Click! {clicks}
-            </Button>
+            </Button>{' '}
+            {text}
         </>
     );
 }
@@ -85,7 +89,8 @@ export function FormFieldsHooksMergedState() {
 
     return (
         <>
-            <label>Hooks (Merged State):</label>
+            <strong>Hooks (Merged State):</strong>
+            <br />
             <input
                 className="form-control"
                 type="text"
@@ -108,7 +113,8 @@ export function FormFieldsHooksMergedState() {
                 }}
             >
                 Click! {state.clicks}
-            </Button>
+            </Button>{' '}
+            {state.text}
         </>
     );
 }

@@ -59,9 +59,13 @@ export function ExternalEventDispatcher() {
 }
 
 function Zap() {
+    return <Emoji emoji="⚡" />;
+}
+
+export function Emoji({ emoji }) {
     return (
-        <span role="img" aria-label="zap">
-            ⚡
+        <span role="img" aria-label="zap123">
+            {emoji}
         </span>
     );
 }

@@ -55,7 +55,7 @@ export function usePokemonLoader({ name }) {
             // pass props to data fetcher.
             const pokemon = await fetchPokemon(name);
 
-            console.debug('loaded:', pokemon);
+            console.debug('custom hook loaded:', pokemon);
 
             setLoading(false);
             setData(pokemon);
