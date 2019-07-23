@@ -73,7 +73,6 @@ function ContextConsumerHooks() {
     }
 
     // and check out that clean component tree in dev tools!
-
     return (
         <>
             <DisplayPokemon loading={loadingFirst} data={dataFirst} />
