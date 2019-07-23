@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, memo } from 'react';
 import { Button } from 'reactstrap';
 
 const LEFT = 0;
@@ -7,10 +7,6 @@ const RIGHT = 2;
 
 const TO_THE_LEFT = -1;
 const TO_THE_RIGHT = 1;
-
-function getStyles(position) {
-    return { marginLeft: position * 10 + 'px' };
-}
 
 export function Example8() {
     const [active, setActive] = useState(false);
@@ -98,10 +94,28 @@ function useDancing(defaultPosition = CENTER, active = false) {
     return position;
 }
 
-function DancingPokemon({ name, position }) {
+const DancingPokemon = memo(({ name, position }) => {
     return (
         <div style={{ width: '100px' }}>
-            <img src={`/pokemon/${name}.png`} style={getStyles(position)} />
+            <img
+                src={`/pokemon/${name}.png`}
+                alt={name}
+                style={getStyles(position)}
+            />
         </div>
     );
+});
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+}
+
+function getStyles(position) {
+    const styles = { marginLeft: position * 10 + 'px' };
+
+    if (getRandomInt(2)) {
+        styles.transform = 'scaleX(-1)';
+    }
+
+    return styles;
 }
