@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Button } from 'reactstrap';
+import { Emoji } from './util';
 
 export function Conclusion() {
+    const [show, setShow] = useState(false);
+
     return (
         <>
             <h1>React Hooks: The Bottom Line</h1>
@@ -17,7 +21,26 @@ export function Conclusion() {
                     Worry about performance when necessary (re-renders aren't
                     always bad + profile, profile, profile!)
                 </li>
-                <li>So about that bottom line...</li>
+                <li>
+                    So about that bottom line...{' '}
+                    <Button
+                        type="button"
+                        size="sm"
+                        onClick={() => setShow(true)}
+                    >
+                        <Emoji emoji="👀" />
+                    </Button>
+                </li>
+                {show ? (
+                    <a
+                        href="https://bit.ly/nwcjs"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ fontSize: '2em' }}
+                    >
+                        https://bit.ly/nwcjs
+                    </a>
+                ) : null}
             </ul>
         </>
     );

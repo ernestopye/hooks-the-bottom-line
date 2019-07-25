@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 /* eslint-disable */
-import { Example0 } from './examples/0-intro';
+import { Intro } from './examples/0-intro';
 import { Example1 } from './examples/1-state';
 import { Example2 } from './examples/2-lifecycle';
 import { Example3, Example3Hooks } from './examples/3-reusable';
@@ -16,7 +16,7 @@ import { Conclusion } from './examples/9-conclusion';
 // zoom: opt+cmd+8
 
 function App() {
-    return <Example0 />;
+    return <Intro />;
 }
 
 export default App;

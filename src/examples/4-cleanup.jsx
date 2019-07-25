@@ -19,8 +19,8 @@ export function Example4() {
                 <>
                     <hr />
                     <EventHandlerClass />
-                    {/* <hr />
-                    <EventHandlerHooks /> */}
+                    <hr />
+                    <EventHandlerHooks />
                 </>
             ) : null}
 

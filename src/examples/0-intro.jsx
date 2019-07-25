@@ -1,7 +1,7 @@
 import React from 'react';
 import { Emoji } from './util';
 
-export function Example0() {
+export function Intro() {
     return (
         <div>
             <h1>React Hooks: The Bottom Line</h1>
