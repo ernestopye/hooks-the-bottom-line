@@ -3,11 +3,14 @@ import { ExternalEventDispatcher, DisplayPokemon, PokemonPicker } from './util';
 import { fetchPokemon } from './data/fakeapi';
 import { PokemonDataFetcher } from './3-reusable';
 
+// say we want to make it easy to reuse/compose the features from the last
+// couple of exercises...
+
 // option 1, leave fetcher + event handler coupled
 export function Example5() {
     // state is now managed by our frankencomponent.
     return (
-        <div>
+        <>
             <PokemonDataFetcherWithEventHandler>
                 {({ loading, data }) => (
                     <DisplayPokemon loading={loading} data={data} />
@@ -15,7 +18,7 @@ export function Example5() {
             </PokemonDataFetcherWithEventHandler>
             <hr />
             <ExternalEventDispatcher />
-        </div>
+        </>
     );
 }
 
@@ -76,6 +79,7 @@ export class PokemonDataFetcherWithEventHandler extends React.Component {
     componentWillUnmount() {
         // avoid memory leaks
         console.debug('class: cleanup');
+
         document.removeEventListener('load-pokemon', this.onLoadPokemon);
     }
 
@@ -96,8 +100,6 @@ export function Example5_2() {
             // check if loading is true here?
             // have to pass it into the function.
         }
-
-        it's like a bag with lego duplo and mega blocks. they're sort of compatible, but not really.
     */
 
     return (

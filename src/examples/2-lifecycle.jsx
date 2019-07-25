@@ -41,19 +41,19 @@ export class PokemonDataFetcherClass extends React.Component {
         });
     }
 
-    async componentDidMount() {
+    componentDidMount() {
         // when the component mounts, get some data
         this.fetchData();
     }
 
     /*
-     async componentDidUpdate(prevProps) {
-         if (prevProps.name === this.props.name) {
-             // don't reload the same data item
-             return;
-         }
+    componentDidUpdate(prevProps) {
+        if (prevProps.name === this.props.name) {
+            // don't reload the same data item
+            return;
+        }
         this.fetchData();
-     }
+    }
     */
 
     render() {

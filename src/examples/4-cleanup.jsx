@@ -19,8 +19,8 @@ export function Example4() {
                 <>
                     <hr />
                     <EventHandlerClass />
-                    <hr />
-                    <EventHandlerHooks />
+                    {/* <hr />
+                    <EventHandlerHooks /> */}
                 </>
             ) : null}
 
@@ -62,6 +62,8 @@ function EventHandlerHooks() {
     const [name, setName] = useState('Bulbasaur');
 
     useEffect(() => {
+        // componentDidMount
+
         function onLoadPokemon(data) {
             console.debug('listened in hooks:', data.detail.name);
             setName(data.detail.name);

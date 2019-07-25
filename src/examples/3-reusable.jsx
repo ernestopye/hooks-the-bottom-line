@@ -64,7 +64,7 @@ export class PokemonDataFetcher extends React.Component {
 
 export function Example3Hooks() {
     const [pokemon, setPokemon] = useState('Bulbasaur');
-    const { loading, data } = usePokemonLoader({ name: pokemon });
+    const { loading, data } = usePokemonLoader(pokemon);
 
     return (
         <>
@@ -81,6 +81,6 @@ export function Example3Hooks() {
 }
 
 // custom hook!
-function usePokemonLoader({ name }) {
+function usePokemonLoader(name) {
     // ???
 }
