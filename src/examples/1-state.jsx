@@ -51,6 +51,7 @@ export class FormFieldsClass extends React.Component {
 }
 
 export function FormFieldsHooks() {
+    // HOLD YOUR HORSES ✋OBEY THE LAW!
     const [text, setText] = useState('Initial Value');
     const [clicks, setClicks] = useState(0);
 

@@ -10,7 +10,8 @@ import { Example5, Example5_2 } from './examples/5-reusable-multiple';
 import { Example6 } from './examples/6-reusable-multiple-hooks';
 import { Example7 } from './examples/7-context';
 import { Example8 } from './examples/8-refs';
-import { Conclusion } from './examples/9-conclusion';
+import { Limitations } from './examples/9-limitations';
+import { Conclusion } from './examples/9a-conclusion';
 /* eslint-enable */
 
 // zoom: opt+cmd+8

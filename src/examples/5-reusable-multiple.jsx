@@ -83,6 +83,7 @@ export class PokemonDataFetcherWithEventHandler extends React.Component {
         document.removeEventListener('load-pokemon', this.onLoadPokemon);
     }
 
+    // what about render prop's evil twin brother... HOCs?!
     render() {
         return this.props.children(this.state);
     }
